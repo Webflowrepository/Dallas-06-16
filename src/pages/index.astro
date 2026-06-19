@@ -51,20 +51,57 @@ import '../styles/global.css';
     photos={editionData.gallery.photos}
   />
   
-  <!-- 03. NEXT EVENT -->
+  <!-- 03. NEXT EVENTS -->
   <section class="next-event-wrapper">
     <div class="next-event-header">
       <h2 class="text-display-m" style="color: var(--color-fg); text-align: center;">
-        Next Event GILD Dallas
+        Next Events
       </h2>
     </div>
-    <div class="next-event-content">
-      <a href="https://luma.com/vz0pry1u" target="_blank" rel="noopener" class="next-event-link">
-        <img src="/assets/photos/events/06-16.webp" alt="Dallas GILD AI Forum x Tecla — AI and Engineering Leaders Dinner" class="next-event-image" />
-        <div class="next-event-overlay">
-          <span class="text-button">RSVP ON LUMA →</span>
+    <div class="next-events-grid">
+
+      <!-- Austin -->
+      <div class="next-event-card">
+        <a href="https://luma.com/GILD23" target="_blank" rel="noopener" class="next-event-link">
+          <img src="/assets/photos/events/austin.webp" alt="Austin GILD AI Forum x Tecla — AI and Engineering Leaders Dinner" class="next-event-image" />
+          <div class="next-event-overlay">
+            <span class="text-button">RSVP ON LUMA →</span>
+          </div>
+        </a>
+        <div class="next-event-meta">
+          <span class="next-event-city">Austin</span>
+          <span class="next-event-date">July 14</span>
         </div>
-      </a>
+      </div>
+
+      <!-- Miami -->
+      <div class="next-event-card">
+        <a href="https://luma.com/Gild25" target="_blank" rel="noopener" class="next-event-link">
+          <img src="/assets/photos/events/miami.webp" alt="Miami GILD AI Forum x Tecla — AI and Engineering Leaders Dinner" class="next-event-image" />
+          <div class="next-event-overlay">
+            <span class="text-button">RSVP ON LUMA →</span>
+          </div>
+        </a>
+        <div class="next-event-meta">
+          <span class="next-event-city">Miami</span>
+          <span class="next-event-date">July 21</span>
+        </div>
+      </div>
+
+      <!-- Dallas -->
+      <div class="next-event-card">
+        <a href="https://luma.com/vz0pry1u" target="_blank" rel="noopener" class="next-event-link">
+          <img src="/assets/photos/events/06-16.webp" alt="Dallas GILD AI Forum x Tecla — AI and Engineering Leaders Dinner" class="next-event-image" />
+          <div class="next-event-overlay">
+            <span class="text-button">RSVP ON LUMA →</span>
+          </div>
+        </a>
+        <div class="next-event-meta">
+          <span class="next-event-city">Dallas</span>
+          <span class="next-event-date">September 22</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -183,10 +220,51 @@ import '../styles/global.css';
     margin: 0 auto;
   }
 
-  .next-event-content {
+  /* ── 3-up events grid ── */
+  .next-events-grid {
     width: 100%;
-    max-width: 800px;
+    max-width: 1040px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .next-event-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .next-event-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 4px;
+  }
+
+  .next-event-city {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--color-fg);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .next-event-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--color-fg-muted);
+    letter-spacing: 0.04em;
+  }
+
+  @media (min-width: 640px) {
+    .next-events-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
   }
 
   .next-event-link {
